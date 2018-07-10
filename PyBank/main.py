@@ -30,17 +30,21 @@ with open(csvpath, 'r') as csvfile:
     min_index = change_list.index(minimum) + 1
     min_month = month_list[min_index]
     
+    print('Financial Analysis')
+    print('-------------------------')
     print("Total Months: " + str(month_count))
     print("Total: $" + str(total_net))
     print("Average Change : " + str(average))
     print("Greatest Increase in Profits: " + str(max_month) + " ($" + str(maximum) + ")")
     print("Greatest Decrease in Profits: " + str(min_month) + " ($" + str(minimum) + ")")
+    title = 'Financial Analysis'
+    line = '-------------------------'
     text1 = "Total Months: " + str(month_count)
     text2 = "Total: $" + str(total_net)
     text3 = "Average Change : " + str(average)
     text4 = "Greatest Increase in Profits: " + str(max_month) + " ($" + str(maximum) + ")"
     text5 = "Greatest Decrease in Profits: " + str(min_month) + " ($" + str(minimum) + ")"
-csvpath = '/Users/Zhisen/Downloads/PyBank_output.csv'
+csvpath = '/Users/Zhisen/python-challenge/PyBank/PyBank_output.csv'
 with open(csvpath, 'w') as outfile:
     output = csv.writer(outfile)
-    output.writerows([[text1],[text2],[text3],[text4],[text5]])
+    output.writerows([[title],[line],[text1],[text2],[text3],[text4],[text5]])

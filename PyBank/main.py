@@ -43,7 +43,8 @@ with open(csvpath, 'r') as csvfile:
     text3 = f"Average Change : {average: .2f}"
     text4 = f"Greatest Increase in Profits: {max_month} (${maximum})"
     text5 = f"Greatest Decrease in Profits: {min_month} (${minimum})"
-csvpath = '/Users/Zhisen/python-challenge/PyBank/PyBank_output.csv'
-with open(csvpath, 'w') as outfile:
-    output = csv.writer(outfile)
-    output.writerows([[title],[line],[text1],[text2],[text3],[text4],[text5]])
+path = '/Users/Zhisen/python-challenge/PyBank/PyBank_output.txt'
+with open(path, 'w') as outfile:
+    output = outfile
+    output.writelines(f'{title}\n{line}\n{text1}\n{text2}\n{text3}\n{text4}\n{text5}')
+

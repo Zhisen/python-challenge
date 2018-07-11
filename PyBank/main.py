@@ -22,7 +22,6 @@ with open(csvpath, 'r') as csvfile:
         change_list.append(change)
         i = i + 1
     average = mean(change_list)
-    average = round(average, 2)
     maximum = max(change_list)
     max_index = change_list.index(maximum) + 1
     max_month = month_list[max_index]
@@ -32,18 +31,18 @@ with open(csvpath, 'r') as csvfile:
     
     print('Financial Analysis')
     print('-------------------------')
-    print("Total Months: " + str(month_count))
-    print("Total: $" + str(total_net))
-    print("Average Change : " + str(average))
-    print("Greatest Increase in Profits: " + str(max_month) + " ($" + str(maximum) + ")")
-    print("Greatest Decrease in Profits: " + str(min_month) + " ($" + str(minimum) + ")")
+    print(f"Total Months: {month_count}")
+    print(f"Total: ${total_net}")
+    print(f"Average Change : {average: .2f}")
+    print(f"Greatest Increase in Profits: {max_month} (${maximum})")
+    print(f"Greatest Decrease in Profits: {min_month} (${minimum})")
     title = 'Financial Analysis'
     line = '-------------------------'
-    text1 = "Total Months: " + str(month_count)
-    text2 = "Total: $" + str(total_net)
-    text3 = "Average Change : " + str(average)
-    text4 = "Greatest Increase in Profits: " + str(max_month) + " ($" + str(maximum) + ")"
-    text5 = "Greatest Decrease in Profits: " + str(min_month) + " ($" + str(minimum) + ")"
+    text1 = f"Total Months: {month_count}"
+    text2 = f"Total: ${total_net}"
+    text3 = f"Average Change : {average: .2f}"
+    text4 = f"Greatest Increase in Profits: {max_month} (${maximum})"
+    text5 = f"Greatest Decrease in Profits: {min_month} (${minimum})"
 csvpath = '/Users/Zhisen/python-challenge/PyBank/PyBank_output.csv'
 with open(csvpath, 'w') as outfile:
     output = csv.writer(outfile)

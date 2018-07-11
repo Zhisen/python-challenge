@@ -53,7 +53,7 @@ us_state_abbrev = {
 }
 
 csvpath1="/Users/Zhisen/Downloads/employee_data.csv"
-csvpath2="/Users/Zhisen/python-challenge/ExtraContent/converted_employee_data.csv"
+csvpath2="/Users/Zhisen/python-challenge/PyBoss/converted_employee_data.csv"
 with open(csvpath1,'r') as infile, \
      open(csvpath2,'w') as outfile:
      data = csv.reader(infile,delimiter = ',')

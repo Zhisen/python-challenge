@@ -1,15 +1,17 @@
+import re
 path1 = "/Users/Zhisen/Downloads/paragraph_files/paragraph_1.txt"
 path2 = "/Users/Zhisen/Downloads/paragraph_files/paragraph_2.txt"
 outpath = "/Users/Zhisen/python-challenge/PyParagraph/paragraphs_output.txt"
 with open(path1, 'r',encoding = "utf-8") as infile1, \
      open(path2, 'r',encoding = "utf-8") as infile2, \
-     open(outpath, 'w') as outfile:
+     open(outpath, 'w') as output:
      p1 = infile1.read()
+     p1 = p1.replace('\n',' ')
      p2 = infile2.read()
-     output = outfile
+     p2 = p2.replace('\n',' ')
      words = p1.split()
      word_count = len(words)
-     sentences = p1.split('.')
+     sentences = re.split("(?<=[.!?]) +",p1)
      sentence_count = len(sentences)
      letter_list = []
      for word in words:
@@ -31,7 +33,7 @@ with open(path1, 'r',encoding = "utf-8") as infile1, \
          
      words = p2.split()
      word_count = len(words)
-     sentences = p2.split('.')
+     sentences = re.split("(?<=[.!?]) +",p2)
      sentence_count = len(sentences)
      letter_list = []
      for word in words:
